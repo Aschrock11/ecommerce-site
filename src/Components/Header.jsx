@@ -7,11 +7,10 @@ function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [hamMenuOpen, setHamMenuOpen] = useState(false);
   return (
-header
     <div className=" sticky top-0 z-50 flex justify-between items-center max-w-1440px h-20 w-full ">
       <div className="  flex justify-center items-center max-h-15 min-h-5 object-cover overflow-hidden  ">
         <img
-          className=" object-contain overflow-hidden max-h-12 md:max-h-16 lg:max-h-20"
+          className="object-contain overflow-hidden max-h-12 md:max-h-16 lg:max-h-20"
           src="./images/currentFurnishLogo.png"
           alt=""
         />
@@ -52,15 +51,6 @@ header
       ) : (
         ""
       )}
-
-    <div className=" flex justify-between items-center ">
-      <div className=" border-solid border-black  rounded-xl border-2 w-20 h-20   ">
-        LOGO gotta create it
-      </div>
-      <div>
-        <a href="">Categories</a>
-      </div>
- main
     </div>
   );
 }
