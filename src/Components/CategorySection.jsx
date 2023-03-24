@@ -9,17 +9,13 @@ function CategorySection() {
 
       <div className="flex bg-blue-300">
         <div>
-          <img
-            className=" object-contain"
-            src="./images/diningroom.jpg"
-            alt=""
-          />
+          <img className=" object-contain" src="./images/lighting.jpg" alt="" />
         </div>
         <div className="flex flex-col bg-gray-400">
           <div>
             <img
               className="object-contain"
-              src="./images/lighting.jpg"
+              src="./images/diningroom.jpg"
               alt=""
             />
           </div>
