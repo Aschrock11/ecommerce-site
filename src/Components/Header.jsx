@@ -39,13 +39,14 @@ function Header() {
         className="h-6 w-6 cursor-pointer visible sm:hidden z-50"
       />
       {hamMenuOpen ? (
-        <div className=" sm:hidden absolute flex flex-col items-center justify-evenly h-screen w-screen top-0 left-0 bg-transparent">
-          <ul className=" flex flex-col gap-28 text-center mr-8">
+        <div className=" z-1 sm:hidden absolute flex flex-col items-center justify-evenly h-screen w-full top-0 bg-gray-500 bg-opacity-95">
+          <ul className=" flex flex-col gap-24 text-center mr-8">
             <li>Sofas</li>
             <li>Dining</li>
             <li>Lighting</li>
             <li>Outdoor</li>
             <li>Bedroom</li>
+            <li>Shopping Cart</li>
           </ul>
         </div>
       ) : (
