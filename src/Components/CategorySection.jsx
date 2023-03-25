@@ -2,29 +2,25 @@ import React from "react";
 
 function CategorySection() {
   return (
-    <div className="flex flex-grow justify-center gap-4  max-h-[1440px] max-w-[1000px]">
-      <div>
-        <img className=" object-contain" src="./images/livingroom.jpg" alt="" />
+    <div className="z-10 mt-6 grid grid-cols-1 md:grid-cols-2 space-x-2 space-y-2">
+      <div className=" bg-slate-100 cursor-pointer">
+        <img
+          className=" h-full hover:opacity-50"
+          src="./images/livingroom.jpg"
+          alt=""
+        />
       </div>
 
-      <div className="flex bg-blue-300">
-        <div>
-          <img
-            className=" object-contain"
-            src="./images/diningroom.jpg"
-            alt=""
-          />
+      <div className="grid grid-cols-2 md:grid-cols-2 space-x-2 space-y-2 ">
+        <div className="hover:opacity-50 cursor-pointer">
+          <img className="" src="./images/lighting.jpg" alt="" />
         </div>
-        <div className="flex flex-col bg-gray-400">
-          <div>
-            <img
-              className="object-contain"
-              src="./images/lighting.jpg"
-              alt=""
-            />
+        <div className="grid md:grid-cols-1 ">
+          <div className="hover:opacity-50 cursor-pointer">
+            <img className=" " src="./images/diningroom.jpg" alt="" />
           </div>
-          <div>
-            <img className="object-contain" src="./images/outdoor.jpg" alt="" />
+          <div className="hover:opacity-50 cursor-pointer">
+            <img className="" src="./images/outdoor.jpg" alt="" />
           </div>
         </div>
       </div>
