@@ -7,7 +7,7 @@ function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [hamMenuOpen, setHamMenuOpen] = useState(false);
   return (
-    <div className=" sticky top-0 z-50 flex justify-between items-center max-w-1440px h-20 w-full ">
+    <div className=" sticky top-0 z-50 flex justify-between items-center max-w-1440px h-20 w-full bg-white">
       <div className="  flex justify-center items-center max-h-15 min-h-5 object-cover overflow-hidden  ">
         <img
           className="object-contain overflow-hidden max-h-12 md:max-h-16 lg:max-h-20"
