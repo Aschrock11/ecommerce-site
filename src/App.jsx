@@ -1,5 +1,6 @@
 import "./App.css";
 import CategorySection from "./Components/CategorySection";
+import FeaturedProducts from "./Components/FeaturedProducts";
 import Header from "./Components/Header";
 
 function App() {
@@ -7,7 +8,7 @@ function App() {
     <div>
       <Header />
       <CategorySection />
-      {/* Featured Products section */}
+      <FeaturedProducts />
       {/* Shop now card (Photo and description) */}
       {/* trending items */}
       {/* footer */}
