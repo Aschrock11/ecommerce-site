@@ -7,11 +7,13 @@ function App() {
   return (
     <div>
       <Header />
-      <CategorySection />
-      <FeaturedProducts />
-      {/* Shop now card (Photo and description) */}
-      {/* trending items */}
-      {/* footer */}
+      <div className="max-w-[1200px] mx-auto">
+        <CategorySection />
+        <FeaturedProducts />
+        {/* Shop now card (Photo and description) */}
+        {/* trending items */}
+        {/* footer */}
+      </div>
     </div>
   );
 }
