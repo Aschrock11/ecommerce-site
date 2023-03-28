@@ -1,15 +1,12 @@
 import React from 'react';
-import ProductCard from './ProductCard';
 import Store from './Store';
+import ProductCard from './ProductCard';
 
-function FeaturedProducts() {
-  const featuredItems = Store.filter((item) =>
-    item.category.includes('featured')
-  );
+function Shop() {
+  //Add filter that filters and then maps out all products with correct category from Store should work with params from link if /sofas only display sofas and so on
 
   return (
-    <div className=' h-full w-full max-w-[1440px] flex-col items-center'>
-      <h1 className='my-[5rem] text-3xl'>Featured Products</h1>
+    <div>
       <div className='grid grid-cols-1 space-y-2 md:grid-cols-4 md:space-y-0 md:space-x-2'>
         {Store.map((item) => (
           <ProductCard
@@ -27,6 +24,4 @@ function FeaturedProducts() {
   );
 }
 
-export default FeaturedProducts;
-
-// add different products to Store.js and give them the Featured category then switch out Store for Featured product on to map
+export default Shop;

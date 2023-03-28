@@ -1,23 +1,19 @@
-import './App.css';
-import CategorySection from './Components/CategorySection';
-import FeaturedProducts from './Components/FeaturedProducts';
-import Header from './Components/Header';
-import ShopNow from './Components/ShopNow';
-import TrendingProducts from './Components/TrendingProducts';
-import Footer from './Components/Footer';
+import { Routes, Route } from 'react-router-dom';
+import Home from './Components/Home';
+import Categories from './Components/Categories';
+import Shop from './Components/Shop';
 
 function App() {
   return (
-    <div>
-      <Header />
-      <div className='mx-auto max-w-[1200px]'>
-        <CategorySection />
-        <FeaturedProducts />
-        <ShopNow />
-        <TrendingProducts />
-        <Footer />
-      </div>
-    </div>
+    <Routes>
+      <Route path='/' element={<Home />} />
+      <Route path='/categories' element={<Categories />}>
+        <Route path=':category' element={<Shop />} />
+      </Route>
+
+      <Route />
+      <Route />
+    </Routes>
   );
 }
 
