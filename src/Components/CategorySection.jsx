@@ -1,9 +1,10 @@
 import React from 'react';
 import ImageWithOverlay from './ImageWithOverlay';
+import { Link } from 'react-router-dom';
 
 function CategorySection() {
   return (
-    <div className='z-10 grid grid-cols-1 space-x-0 space-y-2 md:grid-cols-2 md:space-x-2 md:space-y-0'>
+    <div className='mt-[80px] grid grid-cols-1 space-x-0 space-y-2 md:grid-cols-2 md:space-x-2 md:space-y-0'>
       <ImageWithOverlay
         src='./images/livingroom.jpg'
         alt='image of furnished living room'

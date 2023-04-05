@@ -5,6 +5,7 @@ import FeaturedProducts from './FeaturedProducts';
 import ShopNow from './ShopNow';
 import TrendingProducts from './TrendingProducts';
 import Footer from './Footer';
+import ShoppingCartMenu from './ShoppingCartMenu';
 
 function Home() {
   return (

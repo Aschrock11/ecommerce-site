@@ -2,18 +2,16 @@ import React from 'react';
 import Store from './Store.js';
 import ProductCard from './ProductCard.jsx';
 function TrendingProducts() {
-  function FeaturedProducts() {
-    const featuredItems = Store.filter((item) =>
-      item.category.includes('featured')
-    );
-  }
+  const trendingItems = Store.filter((item) =>
+    item.category.includes('trending')
+  );
 
   return (
-    <div>
+    <div className='mb-[80px]'>
       <div className=' h-full w-full max-w-[1440px] flex-col items-center'>
         <h1 className='my-[5rem] ml-4 text-3xl'>Trending Products</h1>
         <div className='grid grid-cols-1 space-y-2 md:grid-cols-4 md:space-y-0 md:space-x-2'>
-          {Store.map((item) => (
+          {trendingItems.map((item) => (
             <ProductCard
               img={item.img}
               alt={item.alt}

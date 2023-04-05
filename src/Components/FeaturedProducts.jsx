@@ -11,7 +11,7 @@ function FeaturedProducts() {
     <div className=' h-full w-full max-w-[1440px] flex-col items-center'>
       <h1 className='my-[5rem] text-3xl'>Featured Products</h1>
       <div className='grid grid-cols-1 space-y-2 md:grid-cols-4 md:space-y-0 md:space-x-2'>
-        {Store.map((item) => (
+        {featuredItems.map((item) => (
           <ProductCard
             img={item.img}
             alt={item.alt}
