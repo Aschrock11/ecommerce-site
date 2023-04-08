@@ -16,7 +16,7 @@ function Header() {
           <Link to={'/'}>
             <img
               className='max-h-10 overflow-hidden object-contain  md:max-h-14'
-              src='./images/currentFurnishLogo.png'
+              src='/./images/currentFurnishLogo.png'
               alt='Current-Furnish-Logo'
             ></img>
           </Link>
@@ -28,19 +28,19 @@ function Header() {
             <div className=' lg:text-xlg absolute mt-[225px] mr-6 flex w-20 flex-col items-center overflow-hidden border-2 border-t-0 border-solid bg-white p-4 transition-transform md:mt-[260px] md:w-[95px] lg:mt-[302px] lg:w-32'>
               <ul>
                 <li>
-                  <Link to={'/categories'}>Sofas</Link>
+                  <Link to={'/categories/sofa'}>Sofas</Link>
                 </li>
                 <li>
-                  <Link to={'/categories'}>Dining</Link>
+                  <Link to={'/categories/dining'}>Dining</Link>
                 </li>
                 <li>
-                  <Link to={'/categories'}>Lighting</Link>
+                  <Link to={'/categories/lighting'}>Lighting</Link>
                 </li>
                 <li>
-                  <Link to={'/categories'}>Outdoor</Link>
+                  <Link to={'/categories/outdoor'}>Outdoor</Link>
                 </li>
                 <li>
-                  <Link to={'/categories'}>Bedroom</Link>
+                  <Link to={'/categories/bedroom'}>Bedroom</Link>
                 </li>
               </ul>
             </div>
