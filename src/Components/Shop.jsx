@@ -73,7 +73,6 @@ function Shop({ categoryTitle }) {
               setTitleName('Sofas');
             }}
           >
-            <Link to={'sofa'} />
             Sofa
           </button>
           <button
