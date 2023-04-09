@@ -26,10 +26,6 @@ function ProductCard({
             <p>{description}</p>
             <p>{price}</p>
           </div>
-          {/* <button className=' mt-8 mr-2 flex h-8 w-28 items-center justify-center rounded-lg border-[1px] border-gray-200 bg-gray-50 text-sm hover:shadow-lg active:bg-gray-50 active:text-gray-500'>
-        Add to Cart
-        <PlusSmIcon className='h-5 w-5' />
-      </button> */}
         </div>
       </Link>
     </div>

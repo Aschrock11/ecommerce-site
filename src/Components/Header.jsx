@@ -22,7 +22,9 @@ function Header() {
           </Link>
         </div>
         <nav className='hidden h-10 items-center gap-3 sm:flex md:text-xl lg:gap-9 lg:text-3xl'>
-          <button onClick={() => setMenuOpen(!menuOpen)}>Shop</button>
+          <button onClick={() => setMenuOpen(!menuOpen)}>
+            Shop Our Products
+          </button>
           <div>{cartMenuOpen && <ShoppingCartMenu />}</div>
           {menuOpen && (
             <div className=' lg:text-xlg absolute mt-[225px] mr-6 flex w-20 flex-col items-center overflow-hidden border-2 border-t-0 border-solid bg-white p-4 transition-transform md:mt-[260px] md:w-[95px] lg:mt-[302px] lg:w-32'>

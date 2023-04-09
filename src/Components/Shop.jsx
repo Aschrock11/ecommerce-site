@@ -25,22 +25,22 @@ function Shop({ categoryTitle }) {
     setActiveTab(number);
   };
   useEffect(() => {
-    // if (categoryTitle === 'sofa') {
-    //   setActiveTab(2);
-    //   setTitleName('Sofa');
-    // } else if (categoryTitle === 'lighting') {
-    //   setActiveTab(3);
-    //   setTitleName('Lighting');
-    // } else if (categoryTitle === 'dining') {
-    //   setActiveTab(4);
-    //   setTitleName('Dining');
-    // } else if (categoryTitle === 'outdoor') {
-    //   setActiveTab(5);
-    //   setTitleName('Outdoor');
-    // } else if (categoryTitle === 'bedroom') {
-    //   setActiveTab(6);
-    //   setTitleName('Bedroom');
-    // }
+    if (categoryTitle === 'sofa') {
+      setActiveTab(2);
+      setTitleName('Sofa');
+    } else if (categoryTitle === 'lighting') {
+      setActiveTab(3);
+      setTitleName('Lighting');
+    } else if (categoryTitle === 'dining') {
+      setActiveTab(4);
+      setTitleName('Dining');
+    } else if (categoryTitle === 'outdoor') {
+      setActiveTab(5);
+      setTitleName('Outdoor');
+    } else if (categoryTitle === 'bedroom') {
+      setActiveTab(6);
+      setTitleName('Bedroom');
+    }
   }, [data]);
 
   return (
@@ -50,7 +50,7 @@ function Shop({ categoryTitle }) {
           <button
             className={`${
               activeTab === 1
-                ? 'cursor-pointer border-b-2 border-black font-bold'
+                ? 'cursor-pointer border-b border-black font-bold'
                 : 'cursor-pointer border-black hover:border-b'
             }`}
             onClick={() => {
@@ -64,7 +64,7 @@ function Shop({ categoryTitle }) {
           <button
             className={`${
               activeTab === 2
-                ? 'cursor-pointer border-b-2 border-black font-bold'
+                ? 'cursor-pointer border-b border-black font-bold'
                 : 'cursor-pointer border-black hover:border-b'
             } `}
             onClick={() => {
@@ -78,7 +78,7 @@ function Shop({ categoryTitle }) {
           <button
             className={`${
               activeTab === 3
-                ? 'cursor-pointer border-b-2 border-black font-bold'
+                ? 'cursor-pointer border-b border-black font-bold'
                 : 'cursor-pointer border-black hover:border-b'
             } `}
             onClick={() => {
@@ -92,7 +92,7 @@ function Shop({ categoryTitle }) {
           <button
             className={`${
               activeTab === 4
-                ? 'cursor-pointer border-b-2 border-black font-bold'
+                ? 'cursor-pointer border-b border-black font-bold'
                 : 'cursor-pointer border-black hover:border-b'
             }`}
             onClick={() => {
@@ -106,7 +106,7 @@ function Shop({ categoryTitle }) {
           <button
             className={`${
               activeTab === 5
-                ? 'cursor-pointer border-b-2 border-black font-bold'
+                ? 'cursor-pointer border-b border-black font-bold'
                 : 'cursor-pointer border-black hover:border-b'
             }`}
             onClick={() => {

@@ -10,8 +10,9 @@ function Categories() {
   return (
     <div>
       <Header />
-      <div className='mx-auto max-w-[1200px]'></div>
-      <Shop categoryTitle={category} />
+      <div className='mx-auto max-w-[1200px]'>
+        <Shop categoryTitle={category} />
+      </div>
       <Footer />
     </div>
   );
