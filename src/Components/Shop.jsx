@@ -25,28 +25,28 @@ function Shop({ categoryTitle }) {
     setActiveTab(number);
   };
   useEffect(() => {
-    if (categoryTitle === 'sofa') {
-      setActiveTab(2);
-      setTitleName('Sofa');
-    } else if (categoryTitle === 'lighting') {
-      setActiveTab(3);
-      setTitleName('Lighting');
-    } else if (categoryTitle === 'dining') {
-      setActiveTab(4);
-      setTitleName('Dining');
-    } else if (categoryTitle === 'outdoor') {
-      setActiveTab(5);
-      setTitleName('Outdoor');
-    } else if (categoryTitle === 'bedroom') {
-      setActiveTab(6);
-      setTitleName('Bedroom');
-    }
+    // if (categoryTitle === 'sofa') {
+    //   setActiveTab(2);
+    //   setTitleName('Sofa');
+    // } else if (categoryTitle === 'lighting') {
+    //   setActiveTab(3);
+    //   setTitleName('Lighting');
+    // } else if (categoryTitle === 'dining') {
+    //   setActiveTab(4);
+    //   setTitleName('Dining');
+    // } else if (categoryTitle === 'outdoor') {
+    //   setActiveTab(5);
+    //   setTitleName('Outdoor');
+    // } else if (categoryTitle === 'bedroom') {
+    //   setActiveTab(6);
+    //   setTitleName('Bedroom');
+    // }
   }, [data]);
 
   return (
     <div>
       <div className=''>
-        <div className='mb-8 mt-8 hidden justify-evenly md:flex'>
+        <div className='mb-8 mt-8 ml-6 flex justify-between gap-20  overflow-x-scroll md:justify-evenly'>
           <button
             className={`${
               activeTab === 1
@@ -133,13 +133,13 @@ function Shop({ categoryTitle }) {
           </button>
         </div>
       </div>
-      <h1 className='text-xl'>{titleName}</h1>
+      <h1 className='ml-6 mb-8 text-xl'>{titleName}</h1>
       <div className='grid grid-cols-1 space-y-2 md:grid-cols-4 md:space-y-0 md:space-x-2'>
         {data.map((item) => (
           <ProductCard
             img={item.img}
             alt={item.alt}
-            description={item.description}
+            title={item.title}
             price={item.price}
             category={item.category}
             room={item.room}

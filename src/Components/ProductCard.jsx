@@ -5,14 +5,13 @@ import { Link } from 'react-router-dom';
 function ProductCard({
   img,
   alt,
-  description,
+  title,
   price,
   category,
   room,
   id,
   productId,
 }) {
-  console.log(productId);
   return (
     <div
       key={id}
@@ -22,8 +21,8 @@ function ProductCard({
       <Link to={`/item/${productId}`}>
         <img className='' src={img} alt={alt} />
         <div className='flex w-full justify-between'>
-          <div className='flex max-w-[10rem] flex-col py-4 text-sm md:ml-4 md:max-w-[15rem]'>
-            <p>{description}</p>
+          <div className='ml-6 flex max-w-[10rem] flex-col py-4 text-sm md:ml-4 md:max-w-[15rem]'>
+            <p>{title}</p>
             <p>{price}</p>
           </div>
         </div>
@@ -31,6 +30,6 @@ function ProductCard({
     </div>
   );
 }
-//img, alt, description, price, category array, lookup array.filter()
+//img, alt, title, price, category array, lookup array.filter()
 
 export default ProductCard;

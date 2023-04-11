@@ -15,7 +15,7 @@ function FeaturedProducts() {
           <ProductCard
             img={item.img}
             alt={item.alt}
-            description={item.description}
+            title={item.title}
             price={item.price}
             category={item.category}
             room={item.room}

@@ -21,12 +21,12 @@ function Header() {
             ></img>
           </Link>
         </div>
-        <nav className='hidden h-10 items-center gap-3 sm:flex md:text-xl lg:gap-9 lg:text-3xl'>
-          <button onClick={() => setMenuOpen(!menuOpen)}>
-            Shop Our Products
+        <nav className='md:text-md hidden h-10 items-center gap-3 sm:flex lg:gap-9 lg:text-xl'>
+          <button>
+            <Link to={'/categories'}>Our Products</Link>
           </button>
           <div>{cartMenuOpen && <ShoppingCartMenu />}</div>
-          {menuOpen && (
+          {/* {menuOpen && (
             <div className=' lg:text-xlg absolute mt-[225px] mr-6 flex w-20 flex-col items-center overflow-hidden border-2 border-t-0 border-solid bg-white p-4 transition-transform md:mt-[260px] md:w-[95px] lg:mt-[302px] lg:w-32'>
               <ul>
                 <li>
@@ -46,11 +46,11 @@ function Header() {
                 </li>
               </ul>
             </div>
-          )}
+          )} */}
 
           <ShoppingCartIcon
             onClick={() => setCartMenuOpen(!cartMenuOpen)}
-            className='cursor-pointer sm:h-6 sm:w-6 lg:h-8  lg:w-8'
+            className='cursor-pointer sm:h-6 sm:w-6 lg:h-7  lg:w-7'
           />
         </nav>
         <MenuIcon
