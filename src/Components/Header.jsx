@@ -1,14 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { ShoppingCartIcon } from '@heroicons/react/solid';
 import { MenuIcon } from '@heroicons/react/solid';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import ShoppingCartMenu from './ShoppingCartMenu';
+import { CartContext } from '../Components/CartContext';
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [hamMenuOpen, setHamMenuOpen] = useState(false);
   const [cartMenuOpen, setCartMenuOpen] = useState(false);
+  const cart = useContext(CartContext);
+
+  const productsCount = cart.items.reduce(
+    (sum, product) => sum + product.quantity,
+    0
+  );
   return (
     <div className='sticky top-0 z-50  w-full bg-white shadow-lg '>
       <div className='max-w-1440px flex items-center justify-between py-4 pr-6 pl-2'>
@@ -25,7 +32,9 @@ function Header() {
           <button>
             <Link to={'/categories'}>Our Products</Link>
           </button>
-          <div>{cartMenuOpen && <ShoppingCartMenu />}</div>
+          <div>
+            {cartMenuOpen && <ShoppingCartMenu productsCount={productsCount} />}
+          </div>
           {/* {menuOpen && (
             <div className=' lg:text-xlg absolute mt-[225px] mr-6 flex w-20 flex-col items-center overflow-hidden border-2 border-t-0 border-solid bg-white p-4 transition-transform md:mt-[260px] md:w-[95px] lg:mt-[302px] lg:w-32'>
               <ul>
@@ -47,11 +56,19 @@ function Header() {
               </ul>
             </div>
           )} */}
-
-          <ShoppingCartIcon
-            onClick={() => setCartMenuOpen(!cartMenuOpen)}
-            className='cursor-pointer sm:h-6 sm:w-6 lg:h-7  lg:w-7'
-          />
+          <div className='flex'>
+            <ShoppingCartIcon
+              onClick={() => setCartMenuOpen(!cartMenuOpen)}
+              className='cursor-pointer sm:h-6 sm:w-6 lg:h-7  lg:w-7'
+            />
+            <div
+              className={`${
+                productsCount > 0 ? 'relative' : 'hidden'
+              }  bottom-4 text-xs text-red-500`}
+            >
+              <p>{productsCount}</p>
+            </div>
+          </div>
         </nav>
         <MenuIcon
           onClick={() => setHamMenuOpen(!hamMenuOpen)}

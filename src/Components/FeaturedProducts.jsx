@@ -1,6 +1,7 @@
 import React from 'react';
 import ProductCard from './ProductCard';
 import Store from './Store';
+import { Link } from 'react-router-dom';
 
 function FeaturedProducts() {
   const featuredItems = Store.filter((item) =>
