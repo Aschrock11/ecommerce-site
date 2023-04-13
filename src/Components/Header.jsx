@@ -64,7 +64,7 @@ function Header() {
             <div
               className={`${
                 productsCount > 0 ? 'relative' : 'hidden'
-              }  bottom-4 text-xs text-red-500`}
+              }  bottom-4 text-xs font-bold`}
             >
               <p>{productsCount}</p>
             </div>
@@ -78,19 +78,13 @@ function Header() {
           <div className=' z-1 absolute top-0 left-0 flex h-screen w-full flex-col items-center justify-evenly bg-gray-200 bg-opacity-90 transition-transform sm:hidden'>
             <ul className=' mr-8 flex flex-col gap-24 text-center'>
               <li>
-                <Link to={'/categories/sofa'}>Sofas</Link>
+                <Link to={'/categories/About'}>About</Link>
               </li>
               <li>
-                <Link to={'/categories/dining'}>Dining</Link>
+                <Link to={'/categories'}>Our Products</Link>
               </li>
               <li>
-                <Link to={'/categories/lighting'}>Lighting</Link>
-              </li>
-              <li>
-                <Link to={'/categories/outdoor'}>Outdoor</Link>
-              </li>
-              <li>
-                <Link to={'/categories/bedroom'}>Bedroom</Link>
+                <Link to={'/categories/Cart'}>Cart</Link>
               </li>
             </ul>
           </div>

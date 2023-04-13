@@ -4,8 +4,10 @@ import Footer from './Footer';
 import Store from './Store';
 import { useParams } from 'react-router-dom';
 import { PlusSmIcon, MinusIcon } from '@heroicons/react/solid';
+import { ArrowLeftIcon } from '@heroicons/react/outline';
 import { CartContext } from '../Components/CartContext';
 import { useContext } from 'react';
+import { Link } from 'react-router-dom';
 
 const Detail = () => {
   const cart = useContext(CartContext);
@@ -20,7 +22,13 @@ const Detail = () => {
     <div>
       <Header />
       <div className='m-auto flex max-w-[1200px] flex-col md:flex-row'>
-        <div className='m-6 text-2xl md:hidden'>{title}</div>
+        <div className='m-6 flex items-center gap-4 text-2xl md:hidden'>
+          <Link to={'/categories'}>
+            <ArrowLeftIcon className='h-6 w-6' />
+          </Link>
+
+          <h1>{title}</h1>
+        </div>
         <div className='md:w-2/3'>
           <img className='w-full' src={img} alt={alt} />
         </div>
