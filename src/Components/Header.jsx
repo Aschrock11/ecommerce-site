@@ -78,13 +78,16 @@ function Header() {
           <div className=' z-1 absolute top-0 left-0 flex h-screen w-full flex-col items-center justify-evenly bg-gray-200 bg-opacity-90 transition-transform sm:hidden'>
             <ul className=' mr-8 flex flex-col gap-24 text-center'>
               <li>
-                <Link to={'/categories/About'}>About</Link>
+                <Link to={'/'}>Home</Link>
+              </li>
+              <li>
+                <Link to={'/about'}>About</Link>
               </li>
               <li>
                 <Link to={'/categories'}>Our Products</Link>
               </li>
               <li>
-                <Link to={'/categories/Cart'}>Cart</Link>
+                <Link to={'/cart'}>Cart</Link>
               </li>
             </ul>
           </div>

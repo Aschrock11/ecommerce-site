@@ -24,12 +24,14 @@ const Detail = () => {
       <div className='m-auto flex max-w-[1200px] flex-col md:flex-row'>
         <div className='m-6 flex items-center gap-4 text-2xl md:hidden'>
           <Link to={'/categories'}>
-            <ArrowLeftIcon className='h-6 w-6' />
+            <ArrowLeftIcon className='flex h-6 w-6' />
           </Link>
-
           <h1>{title}</h1>
         </div>
         <div className='md:w-2/3'>
+          <Link to={'/categories'}>
+            <ArrowLeftIcon className=' absolute ml-4 mt-4 h-8 w-8 cursor-default opacity-0 md:cursor-pointer md:opacity-100' />
+          </Link>
           <img className='w-full' src={img} alt={alt} />
         </div>
         <div className='flex flex-col justify-between bg-gray-50 md:w-1/3'>
