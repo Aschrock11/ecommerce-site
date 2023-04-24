@@ -7,6 +7,7 @@ import CartProvider from './Components/CartContext';
 import Success from './Components/Success';
 import Cancel from './Components/Cancel';
 import Cart from './Components/Cart';
+import About from './Components/About';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path='/success' element={<Success />} />
         <Route path='/cancel' element={<Cancel />} />
         <Route path='/cart' element={<Cart />} />
+        <Route path='/about' element={<About />} />
       </Routes>
     </CartProvider>
   );

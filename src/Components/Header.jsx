@@ -17,7 +17,7 @@ function Header() {
     0
   );
   return (
-    <div className='sticky top-0 z-50  w-full bg-white shadow-lg '>
+    <div className='sticky top-0  z-50 w-full bg-white shadow-lg'>
       <div className='max-w-1440px flex items-center justify-between py-4 pr-6 pl-2'>
         <div className='max-h-15 min-h-5 flex justify-center overflow-hidden object-cover hover:cursor-pointer  '>
           <Link to={'/'}>
@@ -32,30 +32,21 @@ function Header() {
           <button>
             <Link to={'/categories'}>Our Products</Link>
           </button>
+
           <div>
-            {cartMenuOpen && <ShoppingCartMenu productsCount={productsCount} />}
+            {cartMenuOpen && (
+              <div>
+                <ShoppingCartMenu
+                  productsCount={productsCount}
+                  setCartMenuOpen={setCartMenuOpen}
+                />
+                <div
+                  className='absolute top-0 bottom-0 left-0 right-0 z-20 h-screen w-screen bg-black opacity-70'
+                  onClick={() => setCartMenuOpen(false)}
+                />
+              </div>
+            )}
           </div>
-          {/* {menuOpen && (
-            <div className=' lg:text-xlg absolute mt-[225px] mr-6 flex w-20 flex-col items-center overflow-hidden border-2 border-t-0 border-solid bg-white p-4 transition-transform md:mt-[260px] md:w-[95px] lg:mt-[302px] lg:w-32'>
-              <ul>
-                <li>
-                  <Link to={'/categories/sofa'}>Sofas</Link>
-                </li>
-                <li>
-                  <Link to={'/categories/dining'}>Dining</Link>
-                </li>
-                <li>
-                  <Link to={'/categories/lighting'}>Lighting</Link>
-                </li>
-                <li>
-                  <Link to={'/categories/outdoor'}>Outdoor</Link>
-                </li>
-                <li>
-                  <Link to={'/categories/bedroom'}>Bedroom</Link>
-                </li>
-              </ul>
-            </div>
-          )} */}
           <div className='flex'>
             <ShoppingCartIcon
               onClick={() => setCartMenuOpen(!cartMenuOpen)}

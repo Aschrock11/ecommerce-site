@@ -2,16 +2,7 @@ import React from 'react';
 import { PlusSmIcon } from '@heroicons/react/solid';
 import { Link } from 'react-router-dom';
 
-function ProductCard({
-  img,
-  alt,
-  title,
-  price,
-  category,
-  room,
-  id,
-  productId,
-}) {
+function ProductCard({ img, alt, title, price, id, productId }) {
   return (
     <div
       key={id}
@@ -21,7 +12,7 @@ function ProductCard({
       <Link to={`/item/${productId}`}>
         <img className='' src={img} alt={alt} />
         <div className='flex w-full justify-between'>
-          <div className='ml-6 flex max-w-[10rem] flex-col py-4 text-sm md:ml-4 md:max-w-[15rem]'>
+          <div className='ml-4 flex max-w-[10rem] flex-col py-4 text-sm md:ml-4 md:max-w-[15rem]'>
             <p>{title}</p>
             <p>{price}</p>
           </div>

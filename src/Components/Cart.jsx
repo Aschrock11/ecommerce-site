@@ -32,9 +32,11 @@ const Cart = () => {
   return (
     <div>
       <Header />
-      <div className='mx-auto max-w-[1200px]'>
+      <div className='relative mx-auto max-w-[1200px]'>
         <div className='h-full w-full bg-white shadow-lg'>
-          <p className='ml-2 text-lg'>{`${productsCount} items in cart`}</p>
+          <p className=' ml-2 text-center text-lg'>{`${productsCount} item${
+            productsCount === 1 ? '' : 's'
+          } in cart`}</p>
           <div className='flex h-[78%] flex-col overflow-y-scroll'>
             <div>
               {cart.items.map((currentProduct, idx) => (
@@ -59,7 +61,6 @@ const Cart = () => {
           </div>
         </div>
       </div>
-
       <Footer />
     </div>
   );

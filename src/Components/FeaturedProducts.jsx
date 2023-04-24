@@ -1,7 +1,6 @@
 import React from 'react';
 import ProductCard from './ProductCard';
 import Store from './Store';
-import { Link } from 'react-router-dom';
 
 function FeaturedProducts() {
   const featuredItems = Store.filter((item) =>
@@ -10,7 +9,9 @@ function FeaturedProducts() {
 
   return (
     <div className=' h-full w-full max-w-[1440px] flex-col items-center'>
-      <h1 className='my-[5rem] text-3xl'>Featured Products</h1>
+      <h1 className='my-4 ml-4 text-lg md:my-[3rem] md:ml-0 md:text-3xl'>
+        Featured Products
+      </h1>
       <div className='grid grid-cols-1 space-y-2 md:grid-cols-4 md:space-y-0 md:space-x-2'>
         {featuredItems.map((item) => (
           <ProductCard
@@ -19,8 +20,8 @@ function FeaturedProducts() {
             title={item.title}
             price={item.price}
             category={item.category}
-            room={item.room}
             key={item.id}
+            productId={item.id}
           />
         ))}
       </div>

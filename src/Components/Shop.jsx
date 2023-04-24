@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import Store from './Store';
 import ProductCard from './ProductCard';
-import { Link } from 'react-router-dom';
+import CategoryTab from './CategoryTab';
 
-function Shop({ categoryTitle }) {
+function Shop() {
   const [data, setData] = useState(Store);
   const [titleName, setTitleName] = useState('All');
   const [activeTab, setActiveTab] = useState(1);
@@ -24,113 +24,66 @@ function Shop({ categoryTitle }) {
   const handleActiveTab = (number) => {
     setActiveTab(number);
   };
-  useEffect(() => {
-    // if (categoryTitle === 'sofa') {
-    //   setActiveTab(2);
-    //   setTitleName('Sofa');
-    // } else if (categoryTitle === 'lighting') {
-    //   setActiveTab(3);
-    //   setTitleName('Lighting');
-    // } else if (categoryTitle === 'dining') {
-    //   setActiveTab(4);
-    //   setTitleName('Dining');
-    // } else if (categoryTitle === 'outdoor') {
-    //   setActiveTab(5);
-    //   setTitleName('Outdoor');
-    // } else if (categoryTitle === 'bedroom') {
-    //   setActiveTab(6);
-    //   setTitleName('Bedroom');
-    // }
-  }, [data]);
+  useEffect(() => {}, [data]);
 
   return (
     <div>
       <div className=''>
         <div className='mb-8 mt-8 ml-6 flex justify-between gap-20  overflow-x-scroll md:justify-evenly'>
-          <button
-            className={`${
-              activeTab === 1
-                ? 'cursor-pointer border-b border-black font-bold'
-                : 'cursor-pointer border-black hover:border-b'
-            }`}
-            onClick={() => {
-              filterItems('all');
-              handleActiveTab(1);
-              setTitleName('All');
-            }}
-          >
-            All
-          </button>
-          <button
-            className={`${
-              activeTab === 2
-                ? 'cursor-pointer border-b border-black font-bold'
-                : 'cursor-pointer border-black hover:border-b'
-            } `}
-            onClick={() => {
-              filterItems('sofa');
-              handleActiveTab(2);
-              setTitleName('Sofas');
-            }}
-          >
-            Sofa
-          </button>
-          <button
-            className={`${
-              activeTab === 3
-                ? 'cursor-pointer border-b border-black font-bold'
-                : 'cursor-pointer border-black hover:border-b'
-            } `}
-            onClick={() => {
-              filterItems('lighting');
-              handleActiveTab(3);
-              setTitleName('Lighting');
-            }}
-          >
-            Lighting
-          </button>
-          <button
-            className={`${
-              activeTab === 4
-                ? 'cursor-pointer border-b border-black font-bold'
-                : 'cursor-pointer border-black hover:border-b'
-            }`}
-            onClick={() => {
-              filterItems('dining');
-              handleActiveTab(4);
-              setTitleName('Dining');
-            }}
-          >
-            Dining
-          </button>
-          <button
-            className={`${
-              activeTab === 5
-                ? 'cursor-pointer border-b border-black font-bold'
-                : 'cursor-pointer border-black hover:border-b'
-            }`}
-            onClick={() => {
-              filterItems('outdoor');
-              handleActiveTab(5);
-              setTitleName('Outdoor');
-            }}
-          >
-            Outdoor
-          </button>
-          <button
-            className={`${
-              activeTab === 6
-                ? 'cursor-pointer border-b-2 border-black font-bold'
-                : 'cursor-pointer border-black hover:border-b'
-            }`}
-            onClick={() => {
-              filterItems('bedroom');
-              handleActiveTab(6);
-              setTitleName('Bedroom');
-            }}
-          >
-            Bedroom
-          </button>
+          <CategoryTab
+            tabName={'All'}
+            activeTab={activeTab}
+            active={1}
+            filterName={'all'}
+            filterItems={filterItems}
+            handleActiveTab={handleActiveTab}
+            setTitleName={setTitleName}
+          />
+          <CategoryTab
+            tabName={'Sofas'}
+            activeTab={activeTab}
+            active={2}
+            filterName={'sofa'}
+            filterItems={filterItems}
+            handleActiveTab={handleActiveTab}
+            setTitleName={setTitleName}
+          />
+          <CategoryTab
+            tabName={'Lighting'}
+            activeTab={activeTab}
+            active={3}
+            filterName={'lighting'}
+            filterItems={filterItems}
+            handleActiveTab={handleActiveTab}
+            setTitleName={setTitleName}
+          />
+          <CategoryTab
+            tabName={'Dining'}
+            activeTab={activeTab}
+            active={4}
+            filterName={'dining'}
+            filterItems={filterItems}
+            handleActiveTab={handleActiveTab}
+            setTitleName={setTitleName}
+          />
+          <CategoryTab
+            tabName={'Outdoor'}
+            activeTab={activeTab}
+            active={5}
+            filterName={'outdoor'}
+            filterItems={filterItems}
+            handleActiveTab={handleActiveTab}
+            setTitleName={setTitleName}
+          />
+          <CategoryTab
+            tabName={'Bedroom'}
+            activeTab={activeTab}
+            active={6}
+            filterName={'bedroom'}
+            filterItems={filterItems}
+            handleActiveTab={handleActiveTab}
+            setTitleName={setTitleName}
+          />
         </div>
       </div>
       <h1 className='ml-6 mb-8 text-xl'>{titleName}</h1>
@@ -142,7 +95,6 @@ function Shop({ categoryTitle }) {
             title={item.title}
             price={item.price}
             category={item.category}
-            room={item.room}
             key={item.id}
             productId={item.id}
           />

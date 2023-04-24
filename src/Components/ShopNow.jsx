@@ -2,10 +2,12 @@ import React from 'react';
 
 function ShopNow() {
   return (
-    <div className=' mt-[5rem] flex max-w-[1200px] flex-col md:flex-row'>
+    <div className=' flex max-w-[1200px] flex-col md:mt-[5rem] md:flex-row'>
       <div className='text-center md:mr-14 md:ml-12 md:mt-4 md:w-1/2 md:text-left'>
-        <h1 className='mb-4 text-2xl'>Elevate your space</h1>
-        <p className='mb-8'>
+        <h1 className='my-4 text-xl md:text-2xl lg:text-3xl'>
+          Elevate your space
+        </h1>
+        <p className=' mb-4 md:mb-8 md:text-lg lg:text-xl lg:leading-10'>
           Modern furniture is the centerpiece of any contemporary space, it's
           where you relax, and express your unique style. Find your perfect fit
           in our range of styles, from sleek and minimalist to bold and
