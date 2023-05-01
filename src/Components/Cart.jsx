@@ -12,7 +12,7 @@ const Cart = () => {
     0
   );
   const checkout = async () => {
-    await fetch('https://ecommerce-site-omega-five.vercel.app/checkout', {
+    await fetch('https://ecommerce-site-omega-five.vercel.app/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

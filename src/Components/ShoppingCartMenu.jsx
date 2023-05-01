@@ -5,7 +5,7 @@ import { XIcon } from '@heroicons/react/solid';
 function ShoppingCartMenu({ productsCount, setCartMenuOpen }) {
   const cart = useContext(CartContext);
   const checkout = async () => {
-    await fetch('https://ecommerce-site-omega-five.vercel.app/checkout', {
+    await fetch('https://ecommerce-site-omega-five.vercel.app/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
