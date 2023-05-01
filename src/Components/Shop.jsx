@@ -29,7 +29,7 @@ function Shop() {
   return (
     <div>
       <div className=''>
-        <div className='mb-8 mt-8 ml-6 flex justify-between gap-20  overflow-x-scroll md:justify-evenly'>
+        <div className='mx-4 mb-8 mt-8 ml-6 flex justify-between  gap-20 overflow-x-scroll md:mr-0  md:justify-evenly'>
           <CategoryTab
             tabName={'All'}
             activeTab={activeTab}

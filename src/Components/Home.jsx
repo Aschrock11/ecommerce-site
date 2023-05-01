@@ -5,8 +5,7 @@ import FeaturedProducts from './FeaturedProducts';
 import ShopNow from './ShopNow';
 import TrendingProducts from './TrendingProducts';
 import Footer from './Footer';
-import ShoppingCartMenu from './ShoppingCartMenu';
-
+import AboutUsCard from './AboutUsCard';
 function Home() {
   return (
     <div>
@@ -17,6 +16,7 @@ function Home() {
           <FeaturedProducts />
           <ShopNow />
           <TrendingProducts />
+          <AboutUsCard />
         </div>
         <Footer />
       </div>

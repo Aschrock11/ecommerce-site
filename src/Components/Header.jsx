@@ -5,9 +5,9 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import ShoppingCartMenu from './ShoppingCartMenu';
 import { CartContext } from '../Components/CartContext';
+import { XIcon } from '@heroicons/react/solid';
 
 function Header() {
-  const [menuOpen, setMenuOpen] = useState(false);
   const [hamMenuOpen, setHamMenuOpen] = useState(false);
   const [cartMenuOpen, setCartMenuOpen] = useState(false);
   const cart = useContext(CartContext);
@@ -63,22 +63,37 @@ function Header() {
         </nav>
         <MenuIcon
           onClick={() => setHamMenuOpen(!hamMenuOpen)}
-          className='visible z-50 h-6 w-6 cursor-pointer sm:hidden'
+          className='visible h-6 w-6 cursor-pointer sm:hidden'
+        />
+
+        <XIcon
+          onClick={() => setHamMenuOpen(!hamMenuOpen)}
+          className={`${
+            hamMenuOpen ? 'visible' : 'hidden'
+          } z-50 h-6 w-6 cursor-pointer rounded-full border-2 border-gray-300 shadow-lg active:bg-gray-200`}
         />
         {hamMenuOpen && (
-          <div className=' z-1 absolute top-0 left-0 flex h-screen w-full flex-col items-center justify-evenly bg-gray-200 bg-opacity-90 transition-transform sm:hidden'>
-            <ul className=' mr-8 flex flex-col gap-24 text-center'>
-              <li>
-                <Link to={'/'}>Home</Link>
+          <div className=' z-1 absolute top-0 left-0 flex h-screen w-full flex-col items-center justify-evenly bg-gray-200 transition-transform sm:hidden'>
+            <ul className='flex w-[50%] flex-col gap-12 text-center'>
+              <li className='border-b border-black pb-4'>
+                <Link to={'/'} className='text-3xl font-light'>
+                  Home
+                </Link>
               </li>
-              <li>
-                <Link to={'/about'}>About</Link>
+              <li className='border-b border-black pb-4'>
+                <Link to={'/about'} className='text-3xl font-light'>
+                  About
+                </Link>
               </li>
-              <li>
-                <Link to={'/categories'}>Our Products</Link>
+              <li className='border-b border-black pb-4'>
+                <Link to={'/categories'} className='text-3xl font-light'>
+                  Our Products
+                </Link>
               </li>
-              <li>
-                <Link to={'/cart'}>Cart</Link>
+              <li className='border-b border-black pb-4'>
+                <Link to={'/cart'} className='text-3xl font-light'>
+                  Cart
+                </Link>
               </li>
             </ul>
           </div>
