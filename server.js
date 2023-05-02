@@ -1,11 +1,6 @@
-// sk_test_51Mw8hrDN0ahl3l0UXDnSbzPqJ1J655dsnuMEgweKhM8EsfN1qLdnOeKehOAmh7ERwZhYHSD9bFTIMeL9UlpwGOEw002Votcjw5
-// Open End Sofa With Armrest: price_1Mw8p4DN0ahl3l0UVbpmqSG7
-
 const express = require('express');
 var cors = require('cors');
-const stripe = require('stripe')(
-  'sk_test_51Mw8hrDN0ahl3l0UXDnSbzPqJ1J655dsnuMEgweKhM8EsfN1qLdnOeKehOAmh7ERwZhYHSD9bFTIMeL9UlpwGOEw002Votcjw5'
-);
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 const app = express();
 app.use(cors());
