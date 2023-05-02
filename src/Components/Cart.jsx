@@ -12,7 +12,7 @@ const Cart = () => {
     0
   );
   const checkout = async () => {
-    await fetch('http://localhost:4000/checkout', {
+    await fetch('https://ecommerce-site-q1jt.vercel.app/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
