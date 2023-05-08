@@ -4,6 +4,7 @@ import Header from './Header';
 import { useContext } from 'react';
 import { CartContext } from '../Components/CartContext';
 import CartProduct from './CartProduct';
+import axios from 'axios';
 
 const Cart = () => {
   const cart = useContext(CartContext);
@@ -11,22 +12,50 @@ const Cart = () => {
     (sum, product) => sum + product.quantity,
     0
   );
-  const checkout = async () => {
-    await fetch('https://ecommerce-site-q1jt.vercel.app/', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ items: cart.items }),
-    })
-      .then((response) => {
-        return response.json();
-      })
-      .then((response) => {
-        if (response.url) {
-          window.location.assign(response.url);
-        }
-      });
+  const stripePromise = loadStripe(
+    process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
+  );
+
+  // const checkout = async () => {
+  //   await fetch('https://ecommerce-site-q1jt.vercel.app/', {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //     body: JSON.stringify({ items: cart.items }),
+  //   })
+  //     .then((response) => {
+  //       return response.json();
+  //     })
+  //     .then((response) => {
+  //       if (response.url) {
+  //         window.location.assign(response.url);
+  //       }
+  //     });
+  // };
+
+  const handleCheckout = async () => {
+    const lineItems = cartItems.map((item) => {
+      return {
+        price_data: {
+          currency: 'usd',
+          product_data: {
+            name: item.name,
+          },
+          unit_amount: item.price * 100, // because stripe interprets price in cents
+        },
+        quantity: item.quantity,
+      };
+    });
+
+    const { data } = await axios.post(
+      'https://ecommerce-site-966n.vercel.app/api/checkout',
+      { lineItems }
+    );
+
+    const stripe = await stripePromise;
+
+    await stripe.redirectToCheckout({ sessionId: data.id });
   };
 
   return (
@@ -54,7 +83,7 @@ const Cart = () => {
             </div>
             <button
               className='mb-4 flex h-8 w-[92%] items-center justify-center rounded-lg border-[1px] border-gray-200 bg-gray-100 text-sm hover:shadow-lg active:bg-gray-200 active:text-gray-500'
-              onClick={checkout}
+              onClick={handleCheckout}
             >
               Purchase Items
             </button>

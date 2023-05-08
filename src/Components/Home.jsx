@@ -6,6 +6,7 @@ import ShopNow from './ShopNow';
 import TrendingProducts from './TrendingProducts';
 import Footer from './Footer';
 import AboutUsCard from './AboutUsCard';
+
 function Home() {
   return (
     <div>
