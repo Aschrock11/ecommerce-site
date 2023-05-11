@@ -19,6 +19,19 @@ function Header() {
   return (
     <div className='sticky top-0  z-50 w-full bg-white shadow-lg'>
       <div className='max-w-1440px flex items-center justify-between py-4 pr-6 pl-2'>
+        <MenuIcon
+          onClick={() => setHamMenuOpen(!hamMenuOpen)}
+          className='visible h-6 w-6 cursor-pointer sm:hidden'
+        />
+        <div className='absolute z-50 md:hidden'>
+          <XIcon
+            onClick={() => setHamMenuOpen(!hamMenuOpen)}
+            className={`${
+              hamMenuOpen ? 'visible' : 'hidden'
+            } z-50 flex h-6 w-6 cursor-pointer rounded-full border-2 border-gray-300 shadow-lg active:bg-gray-200`}
+          />
+        </div>
+
         <div className='max-h-15 min-h-5 flex justify-center overflow-hidden object-cover hover:cursor-pointer  '>
           <Link to={'/'}>
             <img
@@ -28,9 +41,11 @@ function Header() {
             ></img>
           </Link>
         </div>
-        <nav className='md:text-md hidden h-10 items-center gap-3 sm:flex lg:gap-9 lg:text-xl'>
+        <nav className='md:text-md flex h-10 items-center gap-3 lg:gap-9 lg:text-xl'>
           <button>
-            <Link to={'/categories'}>Our Products</Link>
+            <Link className='hidden sm:flex' to={'/categories'}>
+              Our Products
+            </Link>
           </button>
 
           <div>
@@ -48,9 +63,12 @@ function Header() {
             )}
           </div>
           <div className='flex'>
+            <Link to={'/checkout'}>
+              <ShoppingCartIcon className='flex h-6 w-6 cursor-pointer sm:hidden lg:h-7  lg:w-7' />
+            </Link>
             <ShoppingCartIcon
               onClick={() => setCartMenuOpen(!cartMenuOpen)}
-              className='cursor-pointer sm:h-6 sm:w-6 lg:h-7  lg:w-7'
+              className='hidden h-6 w-6 cursor-pointer sm:flex lg:h-7  lg:w-7'
             />
             <div
               className={`${
@@ -61,17 +79,7 @@ function Header() {
             </div>
           </div>
         </nav>
-        <MenuIcon
-          onClick={() => setHamMenuOpen(!hamMenuOpen)}
-          className='visible h-6 w-6 cursor-pointer sm:hidden'
-        />
 
-        <XIcon
-          onClick={() => setHamMenuOpen(!hamMenuOpen)}
-          className={`${
-            hamMenuOpen ? 'visible' : 'hidden'
-          } z-50 h-6 w-6 cursor-pointer rounded-full border-2 border-gray-300 shadow-lg active:bg-gray-200`}
-        />
         {hamMenuOpen && (
           <div className=' z-1 absolute top-0 left-0 flex h-screen w-full flex-col items-center justify-evenly bg-gray-200 transition-transform sm:hidden'>
             <ul className='flex w-[50%] flex-col gap-12 text-center'>
@@ -91,8 +99,8 @@ function Header() {
                 </Link>
               </li>
               <li className='border-b border-black pb-4'>
-                <Link to={'/cart'} className='text-3xl font-light'>
-                  Cart
+                <Link to={'/checkout'} className='text-3xl font-light'>
+                  Checkout
                 </Link>
               </li>
             </ul>

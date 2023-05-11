@@ -12,8 +12,8 @@ const About = () => {
         alt='image of beach'
         caption='About Us'
       />
-      <div className='flex w-[80%]'>
-        <p className='w-1/2 font-light'>
+      <div className='my-0 mx-auto flex w-[80%] p-4'>
+        <p className='my-4 mr-16 w-1/2 font-light'>
           At CurrentFurnish, we're passionate about modern furniture and home
           decor that elevates your living spaces. Our story began in 2016, when
           a group of designers and furniture enthusiasts in Southern California

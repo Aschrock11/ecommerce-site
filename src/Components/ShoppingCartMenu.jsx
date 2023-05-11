@@ -2,25 +2,26 @@ import React, { useContext } from 'react';
 import { CartContext } from '../Components/CartContext';
 import CartProduct from './CartProduct';
 import { XIcon } from '@heroicons/react/solid';
+import { Link } from 'react-router-dom';
 function ShoppingCartMenu({ productsCount, setCartMenuOpen }) {
   const cart = useContext(CartContext);
-  const checkout = async () => {
-    await fetch('https://ecommerce-site-q1jt.vercel.app/', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ items: cart.items }),
-    })
-      .then((response) => {
-        return response.json();
-      })
-      .then((response) => {
-        if (response.url) {
-          window.location.assign(response.url);
-        }
-      });
-  };
+  // const checkout = async () => {
+  //   await fetch('https://ecommerce-site-q1jt.vercel.app/', {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //     body: JSON.stringify({ items: cart.items }),
+  //   })
+  //     .then((response) => {
+  //       return response.json();
+  //     })
+  //     .then((response) => {
+  //       if (response.url) {
+  //         window.location.assign(response.url);
+  //       }
+  //     });
+  // };
   return (
     <div className='absolute right-0 top-0 z-50 h-screen w-1/4 bg-white shadow-lg'>
       <div
@@ -47,12 +48,14 @@ function ShoppingCartMenu({ productsCount, setCartMenuOpen }) {
       </div>
       <div className='absolute bottom-0 flex  w-full flex-col items-center justify-end bg-white'>
         <h1 className='mt-2 text-xl'>{`Total: $${cart.getTotalCost()}`}</h1>
-        <button
-          className='my-4 flex w-[92%] items-center justify-center rounded-lg border-[1px] border-gray-200 bg-gray-100 py-2 text-sm hover:shadow-lg active:bg-gray-200 active:text-gray-500'
-          onClick={checkout}
+        <Link
+          to={'/checkout'}
+          className={`${
+            productsCount === 0 ? 'hidden' : 'visible'
+          } my-4 flex w-[92%] items-center justify-center rounded-lg border-[1px] border-gray-200 bg-gray-100 py-2 text-sm hover:shadow-lg active:bg-gray-200 active:text-gray-500`}
         >
-          Purchase Items
-        </button>
+          <button>Purchase Items</button>
+        </Link>
       </div>
     </div>
   );

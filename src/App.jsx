@@ -6,7 +6,7 @@ import Detail from './Components/Detail';
 import CartProvider from './Components/CartContext';
 import Success from './Components/Success';
 import Cancel from './Components/Cancel';
-import Cart from './Components/Cart';
+import Checkout from './Components/Checkout';
 import About from './Components/About';
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
         <Route path='item/:productId' element={<Detail />} />
         <Route path='/success' element={<Success />} />
         <Route path='/cancel' element={<Cancel />} />
-        <Route path='/cart' element={<Cart />} />
+        <Route path='/checkout' element={<Checkout />} />
         <Route path='/about' element={<About />} />
       </Routes>
     </CartProvider>

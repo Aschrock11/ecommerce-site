@@ -21,7 +21,7 @@ const AboutUsCard = () => {
             </button>
           </Link>
         </div>
-        <div className='md:mr-4 md:w-1/2 '>
+        <div className='md:ml-4 md:w-1/2 '>
           <img
             src='https://cdn.roveconcepts.com/sites/default/files/images/Porter%20Modular%20Scene-PerformanceWeave-Almond_View002_daytime_Product.jpg'
             alt=''
