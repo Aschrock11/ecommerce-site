@@ -12,8 +12,8 @@ const About = () => {
         alt='image of beach'
         caption='About Us'
       />
-      <div className='my-0 mx-auto flex w-[80%] p-4'>
-        <p className='my-4 mr-16 w-1/2 font-light'>
+      <div className='my-0 mx-auto flex flex-col items-center p-4 lg:w-[80%] lg:flex-row'>
+        <p className='my-4 w-1/2 font-light lg:mr-16'>
           At CurrentFurnish, we're passionate about modern furniture and home
           decor that elevates your living spaces. Our story began in 2016, when
           a group of designers and furniture enthusiasts in Southern California
@@ -37,7 +37,7 @@ const About = () => {
           reflects your style and enhances your life.
         </p>
         <img
-          className='w-1/2'
+          className='w-1/2 object-contain'
           src='https://cdn.roveconcepts.com/sites/default/files/images/20180917-Noah-Sofa-%26-Wassily-chair-%26-Bennett-media-console_View13_Product.jpg'
           alt='image of livingroom'
         />
