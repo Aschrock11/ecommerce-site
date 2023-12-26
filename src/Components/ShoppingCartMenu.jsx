@@ -5,25 +5,8 @@ import { XIcon } from '@heroicons/react/solid';
 import { Link } from 'react-router-dom';
 function ShoppingCartMenu({ productsCount, setCartMenuOpen }) {
   const cart = useContext(CartContext);
-  // const checkout = async () => {
-  //   await fetch('https://ecommerce-site-q1jt.vercel.app/', {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //     },
-  //     body: JSON.stringify({ items: cart.items }),
-  //   })
-  //     .then((response) => {
-  //       return response.json();
-  //     })
-  //     .then((response) => {
-  //       if (response.url) {
-  //         window.location.assign(response.url);
-  //       }
-  //     });
-  // };
   return (
-    <div className='absolute right-0 top-0 z-50 h-screen w-1/4 bg-white shadow-lg'>
+    <div className='absolute right-0 top-0 z-50 h-screen w-full bg-white shadow-lg sm:w-1/4'>
       <div
         className='flex
      justify-center gap-2 border-[1px] border-solid border-gray-300 '

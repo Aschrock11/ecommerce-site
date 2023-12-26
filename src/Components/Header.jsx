@@ -63,12 +63,12 @@ function Header() {
             )}
           </div>
           <div className='flex'>
-            <Link to={'/checkout'}>
+            {/* <Link to={'/checkout'}>
               <ShoppingCartIcon className='flex h-6 w-6 cursor-pointer sm:hidden lg:h-7  lg:w-7' />
-            </Link>
+            </Link> */}
             <ShoppingCartIcon
               onClick={() => setCartMenuOpen(!cartMenuOpen)}
-              className='hidden h-6 w-6 cursor-pointer sm:flex lg:h-7  lg:w-7'
+              className='h-6 w-6 cursor-pointer sm:flex lg:h-7  lg:w-7'
             />
             <div
               className={`${

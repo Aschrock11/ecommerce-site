@@ -15,8 +15,7 @@ const Detail = () => {
   const product = Store.find((product) => product.id === productId);
   const { img, alt, title, price, description } = product;
   const productQuantity = cart.getProductQuantity(product.id);
-
-  console.log(cart.items);
+  console.log(productQuantity);
 
   return (
     <div>
@@ -55,7 +54,7 @@ const Detail = () => {
                   onClick={() => cart.addOneToCart(product.id)}
                   className='my-4 flex h-12 w-[92%] items-center justify-center rounded-lg border-[1px] border-gray-200 bg-gray-100 text-sm hover:shadow-lg active:bg-gray-200 active:text-gray-500'
                 >
-                  Add to Cart
+                  {`Add to Cart (${productQuantity})`}
                   <PlusSmIcon className='h-5 w-5' />
                 </button>
               </div>

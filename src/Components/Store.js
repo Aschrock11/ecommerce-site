@@ -45,7 +45,7 @@ const Store = [
   },
   {
     id: 'price_1MwUFTDN0ahl3l0UnMCxwccl',
-    img: 'https://cdn.roveconcepts.com/sites/default/files/styles/uc_product_full/public/Milo-Sleeper-Sofa_Alesund_5.jpg',
+    img: 'https://cdn.roveconcepts.com/sites/default/files/styles/picture_1024_2x/public/Milo_Sleeper_Sofa_88_ModernFelt_Malmo_3.jpg',
     alt: 'Image of Sleeper sofa',
     title: 'Sleeper Sofa',
     price: '$1999',

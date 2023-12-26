@@ -14,7 +14,7 @@ const CartProduct = ({ id, quantity }) => {
       <h3 className='my-2 ml-2'>{productData.title}</h3>
       <img src={productData.img} alt={productData.alt} />
       <div className='ml-2 mt-1'>
-        <p>{quantity} total</p>
+        <p>Qty {quantity}</p>
         <p>${quantity * productData.price.slice(1)}</p>
       </div>
 
