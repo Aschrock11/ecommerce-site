@@ -9,8 +9,6 @@ const CategoryTab = ({
   handleActiveTab,
   setTitleName,
 }) => {
-  console.log(active);
-  console.log(activeTab);
   return (
     <div>
       <button

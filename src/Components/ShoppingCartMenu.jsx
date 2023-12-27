@@ -1,10 +1,13 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { CartContext } from '../Components/CartContext';
 import CartProduct from './CartProduct';
 import { XIcon } from '@heroicons/react/solid';
 import { Link } from 'react-router-dom';
 function ShoppingCartMenu({ productsCount, setCartMenuOpen }) {
   const cart = useContext(CartContext);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className='absolute right-0 top-0 z-50 h-screen w-full bg-white shadow-lg sm:w-1/4'>
       <div
@@ -29,13 +32,13 @@ function ShoppingCartMenu({ productsCount, setCartMenuOpen }) {
           />
         ))}
       </div>
-      <div className='absolute bottom-0 flex  w-full flex-col items-center justify-end bg-white'>
+      <div className='absolute bottom-0 mb-8  flex w-full flex-col items-center justify-end bg-white'>
         <h1 className='mt-2 text-xl'>{`Total: $${cart.getTotalCost()}`}</h1>
         <Link
           to={'/checkout'}
           className={`${
             productsCount === 0 ? 'hidden' : 'visible'
-          } my-4 flex w-[92%] items-center justify-center rounded-lg border-[1px] border-gray-200 bg-gray-100 py-2 text-sm hover:shadow-lg active:bg-gray-200 active:text-gray-500`}
+          }my-4 flex w-[92%] items-center justify-center rounded-lg border-[1px] border-gray-200 bg-gray-100 py-2 text-sm hover:shadow-lg active:bg-gray-200 active:text-gray-500`}
         >
           <button>Purchase Items</button>
         </Link>

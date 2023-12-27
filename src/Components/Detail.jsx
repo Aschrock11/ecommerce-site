@@ -8,14 +8,17 @@ import { ArrowLeftIcon } from '@heroicons/react/outline';
 import { CartContext } from '../Components/CartContext';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const Detail = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const cart = useContext(CartContext);
   const { productId } = useParams();
   const product = Store.find((product) => product.id === productId);
   const { img, alt, title, price, description } = product;
   const productQuantity = cart.getProductQuantity(product.id);
-  console.log(productQuantity);
 
   return (
     <div>

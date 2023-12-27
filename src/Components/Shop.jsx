@@ -24,7 +24,9 @@ function Shop() {
   const handleActiveTab = (number) => {
     setActiveTab(number);
   };
-  useEffect(() => {}, [data]);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [data]);
 
   return (
     <div>

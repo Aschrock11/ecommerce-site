@@ -65,20 +65,6 @@ const Checkout1 = () => {
 
           <div className='flex w-full flex-col justify-center space-y-6 xl:flex-row xl:justify-between xl:space-y-0 xl:space-x-6'>
             <div className='flex flex-col items-center justify-center bg-gray-100 py-7 px-10 sm:flex-row sm:py-0 xl:w-full xl:flex-col xl:py-10'>
-              {/* <div className='flex w-full flex-col items-start justify-start space-y-4'>
-                <p className='text-xl leading-normal text-gray-800 md:text-2xl'>
-                  {cart.items.map((currentProduct, idx) => (
-                    <CartProduct
-                      id={currentProduct.id}
-                      quantity={currentProduct.quantity}
-                      key={currentProduct.id}
-                    />
-                  ))}
-                </p>
-                <p className='text-base font-semibold leading-none text-gray-600'>
-                  $520.00
-                </p>
-              </div> */}
               <div className='mt-6 w-52 sm:mt-0 sm:w-96 xl:my-10 xl:w-auto xl:px-20'>
                 <div>
                   {cart.items.map((currentProduct, idx) => (

@@ -14,6 +14,9 @@ const Checkout = () => {
     (sum, product) => sum + product.quantity,
     0
   );
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div>

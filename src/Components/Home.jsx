@@ -6,8 +6,12 @@ import ShopNow from './ShopNow';
 import TrendingProducts from './TrendingProducts';
 import Footer from './Footer';
 import AboutUsCard from './AboutUsCard';
+import { useEffect } from 'react';
 
 function Home() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div>
       <div>
