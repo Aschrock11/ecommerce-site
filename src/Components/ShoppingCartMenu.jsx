@@ -32,7 +32,7 @@ function ShoppingCartMenu({ productsCount, setCartMenuOpen }) {
           />
         ))}
       </div>
-      <div className='absolute bottom-0 mb-16  flex w-full flex-col items-center justify-end bg-white'>
+      <div className='absolute bottom-0 mb-24  flex w-full flex-col items-center justify-end bg-white'>
         <h1 className='mt-2 text-xl'>{`Total: $${cart.getTotalCost()}`}</h1>
         <Link
           to={'/checkout'}
