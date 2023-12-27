@@ -1,7 +1,7 @@
 import React from 'react';
 import Footer from './Footer';
 import Header from './Header';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { CartContext } from './CartContext';
 import { Link } from 'react-router-dom';
 
